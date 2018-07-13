@@ -1,0 +1,15 @@
+<import src="post-item/post-item-template.wxml" />
+<view>
+  <swiper catchtap="onSwiperTap" class="sliderPanel" indicator-dots="true" autoplay="true">
+    <swiper-item><image src="/image/1.jpeg" class="sliderImg"></image></swiper-item>
+    <swiper-item><image src="/image/2.jpeg" class="sliderImg"></image></swiper-item>
+    <swiper-item><image src="/image/3.jpeg" class="sliderImg"></image></swiper-item>
+  </swiper>
+  <block wx:for="{{content}}" wx:for-item="item">
+    <view catchtap="onPostTap" data-postId="{{item.postId}}">
+    <!-- data-形式表示自定义属性  -->
+      <template is="postItem" data="{{...item}}" ></template>
+    </view>
+    <!--...相当于扩展运算符，展开后模版内部就能直接使用,不能在template上绑定事件，因为template本身只是一个占位符 -->
+  </block>
+</view>

@@ -1,0 +1,14 @@
+<!-- 类似于html -->
+<!-- view 类似于div -->
+<view class="container">
+  <image src="/image/post.jpg" class="icon"></image>
+  <text class="user-name">hello</text>
+  <!-- 只有text才可以长按选中,text可以进行嵌套，可以支持转义字符 -->
+  <!-- bind会发生冒泡，catch不会发生冒泡 -->
+  <text class="moto">欢迎来到烦恼牛奶箱</text>
+  <view class='user-class'>
+    <view class='user-container' bindtap="enterNew">
+      <text>OPEN</text>
+    </view>
+  </view>
+</view>

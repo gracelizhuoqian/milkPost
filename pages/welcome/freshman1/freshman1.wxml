@@ -1,0 +1,7 @@
+<view>
+  <image src='/image/bg2.jpg' class='backImg'></image>
+  <view class='panel'>
+    <text>虽不能立刻收到回信</text>
+    <text>但等待的希望总让人心生温暖</text>
+  </view>
+</view>

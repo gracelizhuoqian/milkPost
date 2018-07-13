@@ -1,0 +1,16 @@
+<view class='container'>
+  <text>听听内心的声音，感受</text>
+  <text>你，是怎样的你</text>
+<view class='panel1'>
+  <text>E-I 你如何获取心理能量</text>
+</view>
+<view class='panel2'>
+  <text>S-N 你看到怎样的世界</text>
+</view>
+<view class='panel3'>
+  <text>T-F 你作出决定的依据</text>
+</view>
+<view class='panel4'>
+  <text>J-P 你怎样组织好事情</text>
+</view>
+</view>

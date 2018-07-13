@@ -1,0 +1,21 @@
+<view class="container">
+  <image class="head-image" src="{{isPlaying?postData.music.coverImg:postData.headImgSrc}}"></image>
+  <image class='music' src="{{isPlaying?'/image/music/music-stop.png':'/image/music/music-start.png'}}" catchtap='onMusic'></image>
+  <view class="author-data">
+    <image src="/image/2.png" class="avatar"></image>
+    <text class='author'>{{postData.author}}</text>
+    <text class='const-text'>发表于</text>
+    <text class='time-interval'>{{postData.dateTime}}</text>
+  </view>
+  <text class='title'>{{postData.title}}</text>
+  <view class='tool'>
+    <view class='circle-img' bindtap='onCollection'>
+      <image  wx:if="{{collected}}" src="/image/icon/collection-anti.png" ></image>
+      <image wx:else src="/image/icon/collection.png"></image>
+      <image catchtap='onShare' src="/image/icon/share.png"></image>
+    </view>
+    <view class='horizon'></view>
+    <!--下面的view表示水平直线  -->
+  </view>
+  <text class='content'>{{postData.detail}}</text>
+</view>

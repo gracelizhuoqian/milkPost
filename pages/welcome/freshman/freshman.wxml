@@ -1,0 +1,12 @@
+<view>
+  <image src='/image/bg2.jpg' class='backImg'></image>
+  <view class='panel'>
+    <text>我们浑身的刺因被他人误解而越发尖锐</text>
+    <text>只想躲在自己的世界里</text>
+    <text>却也因为他人善意的相助</text>
+    <text>开始变得柔软</text>
+    <text>愿意面向虽然阴暗却总有阳光的现实</text>
+    <text>我们是什么样子</text>
+    <text>世界就是什么样子</text>
+  </view>
+</view>

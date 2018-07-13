@@ -1,0 +1,18 @@
+<template name="postItem">
+<!--使用name属性定义模版的名字后续使用  -->
+  <view class="news">
+    <view class="author-date">
+      <image src="{{avatar}}" class="author"></image>
+      <text class="date">{{date}}</text>
+    </view>
+    <text class="title">{{title}}</text>
+    <image src="{{imgSrc}}" class="news-img"></image>
+    <text class="news-content">{{content}}</text>
+    <view class="footer-panel">
+      <image src="/image/icon/chat.png" class="collect-img"></image>
+      <text>{{collection}}</text>
+      <image src="/image/icon/view.png" class="like-img"></image>
+      <text class="">{{reading}}</text>     
+    </view>
+  </view>
+</template>

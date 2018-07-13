@@ -1,0 +1,17 @@
+/* pages/login/login.wxss */
+.login{
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    position: fixed;
+    background-color: #b3d4db;
+}
+.login-btn{
+    width: 200rpx;
+    height: 100rpx;
+    margin: 500rpx auto;
+    background: rgba(33, 33, 33, 0.1);
+    box-shadow: 2px 2px 2px #b3d4db;
+    border: 0px solid #b3d4db;
+}
