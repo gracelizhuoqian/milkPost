@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/test/question/question1",
     "pages/test/test",
     "pages/welcome/welcome",
-    "pages/posts/post-detail/post-detail",
     "pages/welcome/freshman/freshman",
     "pages/login/login"
   ],
