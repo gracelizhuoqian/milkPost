@@ -4,8 +4,8 @@
     </view>
     <view class="question-body">
         <form bindsubmit="formSubmit">
-            <block wx:for="{{testData.questions}}" wx:for-item="item">
-            <wux-radio-group name="a" title="{{item.question}}" bind:change="onChange">
+            <block wx:for="{{testData.questions}}" wx:for-item="item" wx:key="id">
+            <wux-radio-group name="{{index}}" title="{{item.question}}" bind:change="onChange" value="{{answer[item.qid]}}" id="{{item.qid}}">
                 <wux-radio title="{{item.ans1}}" value="1" />
                 <wux-radio title="{{item.ans2}}" value="2" />
             </wux-radio-group>

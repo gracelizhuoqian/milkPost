@@ -1,37 +1,64 @@
-var testsData=require("../../../data/test-data.js");
+var testsData = require("../../../data/test-data.js");
 Page({
   data: {
-    // value1: '',
-    // value2: '1',
-    // value3: '1',
-    // value4: '1',
+    answer: [],
   },
-  onLoad:function(options){
+  onLoad: function (options) {
     let testId = options.id;
     let testData = testsData.testList[testId];
     this.setData({
-      currentTestId:testId,
-      testData:testData
+      currentTestId: testId,
+      testData: testData
     });
   },
-  onChange1(field, e) {
-    this.setData({
-      [field]: e.detail.value
-    })
-  },
   onChange(e) {
-    this.onChange1('value1', e)
-  },
-  onChange2(e) {
-    this.onChange('value2', e)
-  },
-  onChange3(e) {
-    this.onChange('value3', e)
-  },
-  onChange4(e) {
-    this.onChange('value4', e)
+    let qid = e.currentTarget.id;
+    let ans = this.data.answer;
+    ans[qid] = e.detail.value;
+    this.setData({
+      answer: ans
+    });
   },
   formSubmit(e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    let {data} = this;
+    let res=this.processAns(data.answer,data.currentTestId);
+    let pages=getCurrentPages();
+    let prevPage = pages[pages.length - 2];//上一页面
+    let nowCharacter = prevPage.data.character;
+    nowCharacter[data.currentTestId]=res;
+    prevPage.setData({
+      character: nowCharacter
+    });
+    if (this.data.currentTestId<3){
+      wx.redirectTo({
+        url: '../question/question?id=' + (++this.data.currentTestId),
+      })
+    }else{
+      wx.navigateBack({
+        delta:1
+      });
+    }
   },
+  processAns(ans, key) {
+    let ans1 = 0,
+      ans2 = 0;
+    for (let value of ans) {
+      if (value === "1") {
+        ans1++;
+      }
+      if (value === "2") {
+        ans2++;
+      }
+    }
+    switch (key) {
+      case "0":
+        return ans1 >= ans2 ? "E" : "I";
+      case "1":
+        return ans1 >= ans2 ? "S" : "N";
+      case "2":
+        return ans1 >= ans2 ? "T" : "F";
+      case "3":
+        return ans1 >= ans2 ? "J" : "P";
+    }
+  }
 })
