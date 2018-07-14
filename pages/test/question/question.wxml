@@ -1,0 +1,18 @@
+<view class="quetion-container">
+    <view class="question-head">
+        <view class="question-title">{{testData.title}}</view>
+    </view>
+    <view class="question-body">
+        <form bindsubmit="formSubmit">
+            <block wx:for="{{testData.questions}}" wx:for-item="item">
+            <wux-radio-group name="a" title="{{item.question}}" bind:change="onChange">
+                <wux-radio title="{{item.ans1}}" value="1" />
+                <wux-radio title="{{item.ans2}}" value="2" />
+            </wux-radio-group>
+            </block>
+            <view class="btn-area">
+                <button formType="submit">提交</button>
+            </view>
+        </form>
+    </view>
+</view>

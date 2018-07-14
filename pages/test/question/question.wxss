@@ -1,0 +1,10 @@
+page{
+  color: #666;
+}
+.question-head{
+  text-align: center;
+  padding: 20rpx 0;
+}
+.question-body{
+  font-size: 28rpx;
+}
