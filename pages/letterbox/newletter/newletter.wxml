@@ -1,0 +1,23 @@
+<!--pages/letterbox/newletter/newletter.wxml-->
+<view class='wrapper'>
+    <!-- <view class="banner">
+        <text class='back-btn' catchtap="goBack">返回</text>
+    </view> -->
+    <view class="form-box">        
+	    <form bindsubmit="formSubmit" bindreset="formReset">
+	      <view class="title">
+	        <input name="title" placeholder="标题（必填）" auto-focus/>
+	      </view>
+	      <view class="theme">
+	        <input name="theme" maxlength="10" placeholder="信的主题，不超过10个字哦" />
+	      </view>
+	      <view class="content">
+	         <textarea name="content" placeholder="请详细描述您的困扰哦"/>
+	      </view>
+		  <view class="btn-area">
+		    <button formType="submit">提交</button>
+		  </view>
+		</form>
+    </view>
+</view>
+

@@ -1,12 +1,15 @@
 {
-  "pages":[
+  "pages": [
+    "pages/letterbox/letterbox",
+    "pages/welcome/welcome",
     "pages/test/question/question1",
     "pages/test/test",
-    "pages/welcome/welcome",
     "pages/welcome/freshman/freshman",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/letterbox/letterdetail/letterdetail",
+    "pages/letterbox/newletter/newletter"
   ],
-  "window":{
-    "backgroundTextStyle":"light"
+  "window": {
+    "backgroundTextStyle": "light"
   }
 }

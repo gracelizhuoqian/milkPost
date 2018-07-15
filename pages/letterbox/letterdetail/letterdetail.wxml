@@ -1,0 +1,26 @@
+<!--pages/letterbox/letterdetail/letterdetail.wxml-->
+<view class='wrapper'>
+    <!-- <view class="banner">
+        <text class='back-btn' catchtap="goBack">返回</text>
+    </view> -->
+    <view class="letter-detail">
+        <view class='letter-title'>{{letterDetail.title}}
+        </view>
+        <view class='letter-theme'>主题：{{letterDetail.theme}}
+        </view>
+        <view class='letter-content'>{{letterDetail.content}}
+        </view>
+        <view class='letter-date'>写于{{letterDetail.date}}
+        </view>
+    </view>
+    <view wx:if="{{letterReply}}" class="letter-reply">
+        <text class='reply'>回信：
+        </text>
+        <view class='letter-title'>{{letterReply.title}}
+        </view>
+        <view class='letter-content'>{{letterReply.content}}
+        </view>
+        <view class='letter-date'>回复于{{letterReply.date}}
+        </view>
+    </view>
+</view>
