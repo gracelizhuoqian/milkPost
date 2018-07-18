@@ -39,7 +39,8 @@ Page({
                 content: content,
                 title: title,
                 theme: theme,
-                date: date
+                date: date,
+                openId: openId
               },
               header: {
                 'content-type':'application/x-www-form-urlencoded',

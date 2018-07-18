@@ -1,13 +1,16 @@
 <!--pages/mail/mail.wxml-->
-<view class='wrapper'>
+ <view class='wrapper'>
     <view class="banner">
         <text>我的信箱</text>
         <text class='new-btn' catchtap="onNewTap">+</text>
     </view>
-    <block class="letter-list" wx:for="{{letterList}}" wx:for-item="item" wx:for-index="idx"  wx:key="item.letterId">
+    <view class="letter-list" wx:for="{{letterList}}" wx:for-item="item" wx:for-index="index"  wx:key="item.letterId">
         
-        <view class="panel" catchtap="onLetterTap" data-letterId="{{item.letterId}}" data-openId="{{item.openId}}" style="background:{{idx%2===0?'#ec9193':'#d4b483'}}">
+        <view class="panel inner" catchtap="onLetterTap" data-letterId="{{item.letterId}}" data-index="{{index}}"data-openId="{{item.openId}}" style="background:{{index%2===0?'#ec9193':'#d4b483'}};{{item.txtStyle}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
         {{item.title}}
         </view>
-</block>
+         <view data-letterId="{{item.letterId}}"  bindtap = "delItem" class="inner del">删除</view> 
+
 </view>
+</view> 
+

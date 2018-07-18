@@ -14,6 +14,7 @@ page{
   text-align: center;
   margin-top: 25rpx;
   opacity: 0.6;
+  margin-bottom: 30px;
 
 }
 .new-btn{
@@ -25,15 +26,48 @@ page{
   height: 50rpx;
 }
 .letter-list{
-  margin-top:25rpx;
+  width: 80%;
+  position: relative;
+  height: 100rpx;
+  overflow: hidden;
+
+   margin: 25rpx auto; 
+ 
 }
+
 .panel{
-  width: 70%;
+  box-sizing: border-box;
+  width: 100%;
   border-radius: 5px;
   padding: 10px;
-  background-color: "#abc";
-  opacity: 0.6;
   box-shadow: 0px 0px 2px #aaa;
   font-size: 28rpx;
-  margin:25rpx auto 0;
+  z-index: 5;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  transition: right 0.2s ease-in-out;
+ 
+  
+}
+
+.inner{
+    position: absolute;
+    top: 0; 
+    height: 80rpx;
+  
+   
+}
+
+.inner.del{
+    background-color: #e64340;
+    width: 180rpx;
+  
+    text-align: center;
+    line-height: 80rpx;
+    z-index: 4;
+    right: 0;
+    color: #fff;
+    border-radius: 5px;
+    
 }
