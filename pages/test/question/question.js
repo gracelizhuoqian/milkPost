@@ -25,10 +25,21 @@ Page({
     let pages=getCurrentPages();
     let prevPage = pages[pages.length - 2];//上一页面
     let nowCharacter = prevPage.data.character;
+    let hasFinished = 0; //标记是否完成
     nowCharacter[data.currentTestId]=res;
     prevPage.setData({
       character: nowCharacter
     });
+    prevPage.data.character.forEach((item)=>{
+      if(item){
+        hasFinished++;
+      }
+    });
+    if(hasFinished === 4){
+      prevPage.setData({
+        showToLetter: true
+      });
+    }
     if (this.data.currentTestId<3){
       wx.redirectTo({
         url: '../question/question?id=' + (++this.data.currentTestId),

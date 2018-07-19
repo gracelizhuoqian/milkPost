@@ -26,7 +26,50 @@ const convertToStarsArr = function(n){
   }
   return arr;
 }
+
+
+const sendRequest = function(json) {
+  var me = this;
+  var token = wx.getStorageSync("token");
+  wx.request({
+    url: json.url,
+    data: json.data,
+    method: json.method,
+    header: {
+      'content-type': 'application/json', // 默认值,
+      'Cookie': "sid=" + token
+    },
+    success: function (res) {//封装登录超时或错误自动退出逻辑
+      var data = JSON.parse(res.data);
+      if (data.code == "401") {
+        wx.showModal({
+          title: '登录超时',
+          content: '请重新登录',
+          success: function (res) {
+            if (res.confirm) {
+              wx.redirectTo({
+                url: '/pages/login/login',
+              })
+            } else if (res.cancel) {
+              wx.redirectTo({
+                url: 'pages/welcome/welcome',
+              })
+            }
+          }
+        })
+      } else {
+        json.success(data);
+      }
+    },
+    fail: function (res) {
+      var data = JSON.parse(res.data);
+      json.fail(data);
+    }
+  })
+}
+
 module.exports = {
   formatTime: formatTime,
-  convertToStarsArr: convertToStarsArr
+  convertToStarsArr: convertToStarsArr,
+  sendRequest: sendRequest,
 }

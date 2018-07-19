@@ -45,3 +45,9 @@ text{
   font-size: 32rpx;
   padding-top: 16rpx;
 }
+.test-tip{
+  margin-top: 80rpx;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  font-weight: 300;
+}

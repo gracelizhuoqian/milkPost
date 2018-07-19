@@ -9,6 +9,7 @@ App({
   onShow: function () {
   },
   globalData: {
-    userFlag:0 //默认新用户
+    userFlag:0, //默认新用户
+    userInfo:null,
   },
 })

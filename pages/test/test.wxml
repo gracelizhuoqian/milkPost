@@ -13,8 +13,11 @@
   <view class='panel4'>
     <text bindtap='onTestDetail' data-testid="3">J-P 你如何做事</text>
   </view>
-  <view class='goNext'catchtap='goPost'>
+  <view class='goNext'catchtap='goPost'wx:if='{{showToLetter}}'>
     <text>前往写信</text>
     <image class='iconNext' src='/image/icon/more.png'></image>
+  </view>
+  <view class='test-tip' wx:else>
+    <text>请认真完成所有测试哦</text>
   </view>
 </view>

@@ -1,6 +1,7 @@
 // pages/login/login.js
 var app = getApp();
 const service = require('../../service.js');
+const util = require('../../utils/util.js');
 var isEmptyObject = function (e) {
   var temp;
   for (temp in e)
@@ -12,7 +13,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    eye:false
   },
   onLoad: function(){
     wx.login({
@@ -27,6 +27,7 @@ Page({
             method:'POST',
             success:function(response){
               wx.setStorageSync('token', response.data.token);
+              app.globalData.userFlag = response.data.userFlag;//修改用户状态
             },
             fail:function(err){
               console.log(err);
@@ -36,29 +37,35 @@ Page({
       }
     })
   },
+  nextPage:function(){
+    if(app.globalData.userFlag == 0){
+      wx.redirectTo({
+        url: '/pages/test/test',
+      })
+    }else{
+      wx.redirectTo({
+        url:"pages/letterbox/letterbox",
+      })
+    }
+  },
   getUserInfoFun: function () {
     var that = this;
     if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo
-      })
+      that.nextPage();
     } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo
-        })
+        app.globalData.userInfo = res.userInfo;
+        that.nextPage();
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo
-          })
           that.checkSettingStatu();
+          that.nextPage();
         },
         fail: function () {
           wx.showModal({
@@ -71,6 +78,7 @@ Page({
                   success: function success(resopen) {
                     //  获取用户数据
                     that.checkSettingStatu();
+                    that.nextPage();
                   }
                 });
               }
@@ -99,23 +107,18 @@ Page({
                 if (res.confirm) {
                   wx.openSetting({
                     success: function success(res) {
-                      console.log()
+                      if (res.authSetting['scope.userInfo'] === false) {
+                        checkSettingStatu(cb);
+                      } else {
+                        wx.reLaunch({
+                          url: 'pages/login/login',
+                        })
+                      }
                     }
                   });
                 }
               }
             })
-          } else if (authSetting['scope.userInfo'] === true) {
-            //该处用户获取用户的一些授权信息
-            if (that.data.userInfo) {
-              // 验证是否是新用户，如果是新用户则进行测试
-              that.setData({
-                eye: false
-              });
-              wx.redirectTo({
-                url: "../test/test",
-              })
-            }
           }
         }
       }

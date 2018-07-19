@@ -2,7 +2,7 @@ var host = 'https://fuguadongchan.top';
 const service = {
     // 用户登录
     login: `${host}/login`,
-    // 提交性格信息
+    // 提交性格信息以及用户个人信息
     character: `${host}/character`,
     // 查看信件列表
     getLetters: `${host}/getLetters`,
