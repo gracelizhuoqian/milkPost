@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/letterbox/letterbox",
     "pages/welcome/welcome",
     "pages/test/question/question1",
     "pages/test/test",
     "pages/welcome/freshman/freshman",
     "pages/login/login",
+    "pages/letterbox/letterbox",
     "pages/letterbox/letterdetail/letterdetail",
     "pages/letterbox/newletter/newletter"
   ],

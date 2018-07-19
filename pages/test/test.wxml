@@ -2,33 +2,19 @@
   <text>听听内心的声音，感受</text>
   <text>你，是怎样的你</text>
   <view class='panel1'>
-    <text bindtap='onTabEI'>E-I 你如何获取心理能量</text>
+    <text bindtap='onTestDetail' data-testid="0">E-I 你如何获取心理能量</text>
   </view>
   <view class='panel2'>
-    <text>S-N 你看到怎样的世界</text>
+    <text bindtap='onTestDetail' data-testid="1">S-N 你看到怎样的世界</text>
   </view>
   <view class='panel3'>
-    <text>T-F 你作出决定的依据</text>
+    <text bindtap='onTestDetail' data-testid="2">T-F 你作出决定的依据</text>
   </view>
   <view class='panel4'>
-    <text>J-P 你如何做事</text>
+    <text bindtap='onTestDetail' data-testid="3">J-P 你如何做事</text>
   </view>
-  <view class="page__bd">
-    <form bindsubmit="formSubmit">
-      <wux-radio-group name="a" value="{{ value1 }}" title="Default" bind:change="onChange1">
-        <wux-radio title="Java" value="1" />
-        <wux-radio title="PHP" value="2" />
-      </wux-radio-group>
-      <wux-radio-group name="b" value="{{ value2 }}" title="Label" bind:change="onChange2">
-        <wux-radio title="Java" label="details" value="1" />
-        <wux-radio title="PHP" label="details" value="2" />
-      </wux-radio-group>
-      <wux-radio-group name="c" value="{{ value3 }}" title="Thumb" bind:change="onChange3">
-      </wux-radio-group>
-      <wux-radio-group name="d" value="{{ value4 }}" title="Trigger onChange" bind:change="onChange4">
-        <wux-radio title="Java" value="1" />
-        <wux-radio title="PHP" value="2" />
-      </wux-radio-group>
-    </form>
+  <view class='goNext'catchtap='goPost'>
+    <text>前往写信</text>
+    <image class='iconNext' src='/image/icon/more.png'></image>
   </view>
 </view>
