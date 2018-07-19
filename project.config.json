@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.9",
 	"appid": "wxca73bc64d456c708",
-	"projectname": "postbox",
+	"projectname": "milkpost",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

@@ -1,5 +1,6 @@
 // pages/login/login.js
 var app = getApp();
+const service = require('../../service.js');
 var isEmptyObject = function (e) {
   var temp;
   for (temp in e)
@@ -7,12 +8,33 @@ var isEmptyObject = function (e) {
   return !0
 }
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     eye:false
+  },
+  onLoad: function(){
+    wx.login({
+      success: function(res){
+        let code = res.code;
+        if(code){
+          wx.request({
+            url: service.login,
+            data:{
+              code:code
+            },
+            method:'POST',
+            success:function(response){
+              wx.setStorageSync('token', response.data.token);
+            },
+            fail:function(err){
+              console.log(err);
+            }
+          })
+        }
+      }
+    })
   },
   getUserInfoFun: function () {
     var that = this;

@@ -18,5 +18,8 @@ Page({
     wx.navigateTo({
       url: 'question/question?id='+testId,
     })
+  },
+  goPost: function(){
+    
   }
 })
