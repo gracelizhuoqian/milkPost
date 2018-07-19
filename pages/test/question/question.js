@@ -56,7 +56,7 @@ Page({
       case "1":
         return ans1 >= ans2 ? "S" : "N";
       case "2":
-        return ans1 >= ans2 ? "T" : "F";
+        return ans1 >= ans2 ? "F" : "T";
       case "3":
         return ans1 >= ans2 ? "J" : "P";
     }
