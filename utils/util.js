@@ -37,10 +37,10 @@ const sendRequest = function(json) {
     method: json.method,
     header: {
       'content-type': 'application/json', // 默认值,
-      'Cookie': "sid=" + token
+      'x-access-token': token
     },
     success: function (res) {//封装登录超时或错误自动退出逻辑
-      var data = JSON.parse(res.data);
+      var data = res.data;
       if (data.code == "401") {
         wx.showModal({
           title: '登录超时',
@@ -62,7 +62,7 @@ const sendRequest = function(json) {
       }
     },
     fail: function (res) {
-      var data = JSON.parse(res.data);
+      var data =res.data;
       json.fail(data);
     }
   })

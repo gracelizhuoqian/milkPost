@@ -1,9 +1,9 @@
 {
   "pages":[
-    "pages/letterbox/letterbox",
     "pages/login/login",
     "pages/test/test",
     "pages/test/question/question",
+    "pages/letterbox/letterbox",
     "pages/welcome/freshman/freshman",
     "pages/letterbox/letterdetail/letterdetail",
     "pages/letterbox/newletter/newletter"

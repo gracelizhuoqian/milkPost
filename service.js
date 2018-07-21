@@ -1,4 +1,4 @@
-var host = 'https://fuguadongchan.top';
+var host = 'http://localhost:8765';
 const service = {
     // 用户登录
     login: `${host}/login`,

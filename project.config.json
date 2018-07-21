@@ -4,16 +4,16 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.9",
-	"appid": "wxca73bc64d456c708",
-	"projectname": "milkPost",
+	"libVersion": "2.2.0",
+	"appid": "wx955846b742b214fd",
+	"projectname": "fuzzyMilkPost",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

@@ -44,7 +44,7 @@ Page({
       })
     }else{
       wx.redirectTo({
-        url:"pages/letterbox/letterbox",
+        url:"../../pages/letterbox/letterbox",
       })
     }
   },
