@@ -4,12 +4,12 @@
         <text>我的信箱</text>
         <text class='new-btn' catchtap="onNewTap">+</text>
     </view>
-    <view class="letter-list" wx:for="{{letterList}}" wx:for-item="item" wx:for-index="index"  wx:key="item.letterId">
+    <view class="letter-list" wx:for="{{letterList}}" wx:for-item="item" wx:for-index="idx"  wx:key="item.index">
         
-        <view class="panel inner" catchtap="onLetterTap" data-letterId="{{item.letterId}}" data-index="{{index}}"data-openId="{{item.openId}}" style="background:{{index%2===0?'#ec9193':'#d4b483'}};{{item.txtStyle}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
+        <view class="panel inner" catchtap="onLetterTap" data-index="{{item.index}}" data-idx="{{idx}}" style="background:{{idx%2===0?'#ec9193':'#d4b483'}};{{item.txtStyle}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
         {{item.title}}
         </view>
-         <view data-letterId="{{item.letterId}}"  bindtap = "delItem" class="inner del">删除</view> 
+         <view data-index="{{item.index}}"  bindtap = "delItem" class="inner del">删除</view> 
 
 </view>
 </view> 

@@ -6,7 +6,7 @@
     <view class="letter-detail">
         <view class='letter-title'>{{letterDetail.title}}
         </view>
-        <view class='letter-theme'>主题：{{letterDetail.theme}}
+        <view class='letter-subjec'>主题：{{letterDetail.subjec}}
         </view>
         <view class='letter-content'>{{letterDetail.content}}
         </view>
