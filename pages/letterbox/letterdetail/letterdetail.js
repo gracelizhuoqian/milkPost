@@ -23,6 +23,7 @@ Page({
   },
   getLetterDetail: function(){
       var that = this;
+      var index = that.data.index;
        var options = {
           url: service.getOneLetter,
           method: 'GET',
