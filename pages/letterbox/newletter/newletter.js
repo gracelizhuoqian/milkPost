@@ -23,7 +23,7 @@ Page({
   },
  formSubmit: function(e) {
   var title = e.detail.value.title,
-      subjec = e.detail.value.subjec,
+      subject = e.detail.value.subject,
       content = e.detail.value.content,
       that = this,
       date = util.formatTime(new Date());
@@ -32,28 +32,39 @@ Page({
           method: 'POST',
           data: {
             title,
-            subjec,
+            subject,
             content,
             date
           },
           success: function (res) {
+            if(res.code == 200){
               wx.showToast({
-                  title: '提交成功',
-                  icon: 'success',
-                  duration: 2000
+                title: '提交成功',
+                icon: 'success',
+                duration: 2000,
+                complete: function (){
+                  that.goBack();
+                }
               });
-              that.goBack();
+            }else{
+              wx.showToast({
+                title: res.message,
+                icon: 'none',
+                duration: 2000
+              })
+            }
+              
 
           },
           fail: function (err) {
-            wx.showModal({
-                  title: '提示',
-                  content: err.message,
-                  showCancel: false,
-            });
+            wx.showToast({
+              title: err.message,
+              icon: 'none',
+              duration: 2000
+            })
           }
       };
-      if(title && subjec && content){
+      if(title && subject && content){
           util.sendRequest(options);
       }else{
         wx.showModal({

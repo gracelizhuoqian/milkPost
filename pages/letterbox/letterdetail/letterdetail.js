@@ -26,13 +26,27 @@ Page({
       var index = that.data.index;
        var options = {
           url: service.getOneLetter,
-          method: 'GET',
+          method: 'POST',
           data: {index},
           success: function (res) {
-              that.setData({letterDetail: res.letterData[0]});
-              if(res.letterData[1]){
-                  that.setData({letterReply: res.letterData[1]});
+            if (res.code == 200) {
+              if (res.letterData.length === 1 ){
+                that.setData({ letterDetail: res.letterData[0] });
+              } else if (res.letterData[1].from === 'system'){
+                that.setData({ letterDetail: res.letterData[0] });
+                that.setData({ letterReply: res.letterData[1] });
+              }else {
+                that.setData({ letterDetail: res.letterData[1] });
+                that.setData({ letterReply: res.letterData[0] });
               }
+             
+            } else {
+              wx.showToast({
+                title: res.message,
+                icon: 'none',
+                duration: 2000
+              })
+            }
           },
           fail: function (err) {
             wx.showToast({

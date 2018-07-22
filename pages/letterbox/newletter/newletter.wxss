@@ -25,7 +25,7 @@ page{
 	margin-top: 25rpx;
 	text-align: center;
 }
-.subjec{
+.subject{
 	margin-top: 25rpx;
 	font-size: 30rpx;
 	text-align: center;

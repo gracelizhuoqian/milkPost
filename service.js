@@ -1,4 +1,4 @@
-var host = 'http://localhost:8765';
+var host = 'https://fuguadongchan.top';
 const service = {
     // 用户登录
     login: `${host}/login`,
@@ -11,6 +11,6 @@ const service = {
     // 新增一封信件
     addOneLetter:`${host}/addOneLetter`,
     // 删除一封信件
-    deleteOneLetter: `${host}/deleteOneLetter`
+    deleteOneLetter:`${host}/deleteOneLetter`
 };
 module.exports = service;

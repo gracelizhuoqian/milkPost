@@ -6,21 +6,20 @@
     <view class="letter-detail">
         <view class='letter-title'>{{letterDetail.title}}
         </view>
-        <view class='letter-subjec'>主题：{{letterDetail.subjec}}
+        <view class='letter-subjec'>主题：{{letterDetail.subject}}
         </view>
         <view class='letter-content'>{{letterDetail.content}}
         </view>
-        <view class='letter-date'>写于{{letterDetail.date}}
+        <view class='letter-date'>写于{{letterDetail.createAt}}
         </view>
     </view>
     <view wx:if="{{letterReply}}" class="letter-reply">
-        <text class='reply'>回信：
-        </text>
+        
         <view class='letter-title'>{{letterReply.title}}
         </view>
         <view class='letter-content'>{{letterReply.content}}
         </view>
-        <view class='letter-date'>回复于{{letterReply.date}}
+        <view class='letter-date'>回复于{{letterReply.createAt}}
         </view>
     </view>
 </view>

@@ -15,6 +15,9 @@ Page({
    */
   onLoad: function (options) {
          
+       
+  },
+  onShow: function () {
         this.getLetterList();
   },
   getLetterList: function () {
@@ -23,7 +26,15 @@ Page({
           url: service.getLetters,
           method: 'GET',
           success: function (res) {
-          that.setData({letterList: res.letterList});
+            if (res.code == 200) {
+              that.setData({ letterList: res.letterList });
+            } else {
+              wx.showToast({
+                title: res.message,
+                icon: 'none',
+                duration: 2000
+              })
+            }
           },
           fail: function (err) {
             wx.showToast({
@@ -120,12 +131,24 @@ Page({
           method: 'POST',
           data: {index},
           success: function (res) {
+            if (res.code == 200) {
               wx.showToast({
-                  title: '删除成功',
-                  icon: 'success',
-                  duration: 2000
+                title: '删除成功',
+                icon: 'success',
+                duration: 2000,
+                complete: function () {
+                  that.getLetterList();
+                }
               });
-              that.getLetterList();
+            } else {
+              wx.showToast({
+                title: res.message,
+                icon: 'none',
+                duration: 2000
+              })
+            }
+              
+             
 
           },
           fail: function (err) {
