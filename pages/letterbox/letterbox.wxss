@@ -1,37 +1,45 @@
 /* pages/mail/mail.wxss */
-.wrapper{
-  width: 100%;
-  height: 100%;
- 
-}
 page{
-  background-color: #f1f2e3;
-
- 
+  background-color: #f1f2e3; 
 }
 
 .banner{
   text-align: center;
-  margin-top: 25rpx;
-  opacity: 0.6;
+  padding-top: 25rpx;
+  color: #222;
   margin-bottom: 30px;
+  background-color: #f1f2e3; 
+  position: fixed;
+  z-index: 6;
+  width: 100%;
+  height: 100rpx;
+}
 
+.scroll-content{
+  width: 100%;
+  padding-top: 100rpx;
+  margin-bottom: 50rpx;
 }
 .new-btn{
   position: absolute;
   right: 60rpx;
   border: 1px solid #666;
+  box-shadow: 0 0 3px #666;
+  color: #555;
   border-radius: 50%;
-  width: 50rpx;
-  height: 50rpx;
+  width: 53rpx;
+  height: 53rpx;
+  line-height: 48rpx;
+  font-size: 48rpx;
+  vertical-align: baseline;
 }
 .letter-list{
   width: 80%;
   position: relative;
-  height: 100rpx;
+  height: 160rpx;
   overflow: hidden;
-
-   margin: 25rpx auto; 
+  color: #444;
+  margin: 25rpx auto; 
  
 }
 
@@ -46,28 +54,59 @@ page{
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
-  transition: right 0.2s ease-in-out;
- 
-  
+  transition: right 0.2s ease-in-out;  
 }
 
 .inner{
     position: absolute;
     top: 0; 
-    height: 80rpx;
-  
-   
+    height: 160rpx;   
 }
-
+.subject{
+  margin-top: 10rpx;
+  font-size: 1em;
+}
+.date{
+  margin-bottom: 3rpx;
+  text-align: right;
+  font-size: 0.9em;
+}
+.icon{
+  position: absolute;
+  top: 8rpx;
+  right: 8rpx;
+}
 .inner.del{
-    background-color: #e64340;
+    background-color: rgba(204, 51, 51, 0.6);
     width: 180rpx;
-  
     text-align: center;
-    line-height: 80rpx;
+    line-height: 160rpx;
     z-index: 4;
     right: 0;
-    color: #fff;
-    border-radius: 5px;
-    
+    color: #eee;
+    border-radius: 5px;  
+}
+.tips{
+  position: fixed;
+  bottom: 20rpx;
+  left: 25rpx;
+  font-size: 25rpx;
+  color: #ccc;
+  width: 20rpx;
+}
+.blank{
+  position: absolute;
+  top: 150rpx;
+  left: 50rpx;
+  right: 50rpx;
+  margin: 0 auto;
+
+}
+.blank text{
+  display: block;
+  text-align: left;
+  font-size: 30rpx;
+  line-height: 1.8;
+  color: #ccc;
+  text-indent: 2em;
 }

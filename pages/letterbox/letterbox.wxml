@@ -1,16 +1,34 @@
 <!--pages/mail/mail.wxml-->
- <view class='wrapper'>
-    <view class="banner">
-        <text>我的信箱</text>
-        <text class='new-btn' catchtap="onNewTap">+</text>
-    </view>
+<view class="banner">
+    <text>我的信箱</text>
+    <text class='new-btn' catchtap="onNewTap">+</text>
+</view>
+<view class='wrapper'>
+ <scroll-view class='scroll-content' wx:if="{{letterList.length>0}}">
     <view class="letter-list" wx:for="{{letterList}}" wx:for-item="item" wx:for-index="idx"  wx:key="item.index">
         
-        <view class="panel inner" catchtap="onLetterTap" data-index="{{item.index}}" data-idx="{{idx}}" style="background:{{idx%2===0?'#ec9193':'#d4b483'}};{{item.txtStyle}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
-        {{item.title}}
+        <view class="panel inner" catchtap="onLetterTap" data-index="{{item.index}}" data-idx="{{idx}}" style="background:{{idx%2===0?'rgb(230, 155, 155)':'#d4b483'}};{{item.txtStyle}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
+        
+            <view>{{item.title}}</view>
+            <view class='subject'>
+                <text>主题：{{item.subject}}</text>
+            </view>
+            <view class='date'>
+                <text >写于 {{item.createAt}}</text>{{}}
+            </view>
+            
+             <view class='icon' wx:if="{{item.flag}}">
+                  <icon type="{{item.readFlag?'success': 'info'}}" size="18"
+                   color="rgba(72, 72, 72, 0.8)"/>
+             </view>
         </view>
          <view data-index="{{item.index}}"  bindtap = "delItem" class="inner del">删除</view> 
 
 </view>
-</view> 
+</scroll-view> 
+<view wx:else class='blank'> 
+    <text>“后来我才知道，生活就是个缓慢受锤的过程，⼈一天天老下去，奢望也一天天消失，最后变得像挨了锤的牛一样。可是我过20岁⽣日时没有预见到这一点。我觉得自⼰会永远生猛下去，什么也锤不了我。” </text>
+</view>
+</view>
+<view class='tips' wx:if="{{letterList.length>0}}">左滑可删除哦</view>
 

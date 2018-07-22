@@ -65,7 +65,15 @@ Page({
           }
       };
       if(title && subject && content){
-          util.sendRequest(options);
+          if (content.length < 15) {
+            wx.showModal({
+              title: '提示',
+              content: '内容最少15个字哦',
+              showCancel: false
+            });
+          }else{
+            util.sendRequest(options);
+          }
       }else{
         wx.showModal({
           title: '提示',

@@ -39,7 +39,9 @@ Page({
                 that.setData({ letterDetail: res.letterData[1] });
                 that.setData({ letterReply: res.letterData[0] });
               }
-             
+              if (that.data.letterDetail.flag){
+                wx.setStorageSync(index, true)
+              }
             } else {
               wx.showToast({
                 title: res.message,

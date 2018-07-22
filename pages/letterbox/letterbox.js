@@ -9,7 +9,6 @@ Page({
   data: {
     delBtnWidth: 180
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -27,6 +26,15 @@ Page({
           method: 'GET',
           success: function (res) {
             if (res.code == 200) {
+              
+              res.letterList.forEach(function(item){
+                var letterid = item.letterid;
+                item.createAt = item.createAt.split('.')[0];
+                var value = wx.getStorageSync(letterid)
+                if (value) {
+                  item.readFlag = value;
+                }
+              });
               that.setData({ letterList: res.letterList });
             } else {
               wx.showToast({
