@@ -1,0 +1,32 @@
+.result-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50rpx 0;
+}
+page{
+  background: #f1f2e3;
+}
+.character-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 20rpx 60rpx;
+  font-size: 28rpx;
+}
+.character-item{
+  line-height: 1.5;
+  padding: 10rpx 0;
+}
+.charcter-tips{
+  width: 300rpx;
+  height: 100rpx;
+  margin:20rpx auto;
+  background: #eadaa7;
+  box-shadow: 0 0 3px #d9b94c;
+  color: #333;
+  text-align: center;
+  line-height: 100rpx;
+  font-weight: 300;
+  font-size: 30rpx;
+}

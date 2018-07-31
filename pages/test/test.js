@@ -1,5 +1,3 @@
-var service = require('./../../service.js');
-var util = require('./../../utils/util.js');
 var app = getApp();
 Page({
 
@@ -22,28 +20,15 @@ Page({
       url: 'question/question?id='+testId,
     })
   },
-  goPost: function(){
-    //写信前发送掉性格信息以及个人信息
+  goResult:function(){
     let character = this.data.character.join("");
-    let userInfo = app.globalData.userInfo;
-    util.sendRequest({
-      url: service.character,
-      data:{
-        character:character,
-        nickName:userInfo.nickName,
-        gender: userInfo.gender == 2 ? "female":"male"
-      },
-      method:"POST",
-      success:function(res){
-        if(res.code == 200){
-          wx.redirectTo({
-            url: '../../pages/letterbox/letterbox',
-          })
-        }
-      },
-      fail:function(res){
-        console.log(res);
-      }
+    wx.redirectTo({
+      url: './result/result?character='+character,
+    })
+  },
+  goPost: function(){
+    wx.redirectTo({
+      url: '../../pages/letterbox/letterbox',
     })
   }
 })

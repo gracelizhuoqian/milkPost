@@ -14,20 +14,6 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-const convertToStarsArr = function(n){
-  let star=Math.round(n/2);
-  let arr=[];
-  for(let i=0;i<5;i++){
-    if(i<star){
-      arr[i]=1;
-    }else{
-      arr[i]=0;
-    }
-  }
-  return arr;
-}
-
-
 const sendRequest = function(json) {
   var me = this;
   var token = wx.getStorageSync("token");
@@ -67,9 +53,13 @@ const sendRequest = function(json) {
     }
   })
 }
-
+const strToArr =function(str){
+  let strData = str.replace(/\d\./g,"$").replace(/\s*/g,"");
+  let arr = strData.split("$").slice(1);
+  return arr;
+};
 module.exports = {
   formatTime: formatTime,
-  convertToStarsArr: convertToStarsArr,
   sendRequest: sendRequest,
+  strToArr:strToArr,
 }

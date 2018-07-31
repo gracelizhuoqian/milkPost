@@ -1,0 +1,13 @@
+<view class='result-container'>
+  <view class='slogan'>
+    <text>你是{{characterTotal}}型人格</text>
+  </view>
+  <view class='character-detail'>
+  <block wx:for="{{characterDetail}}" wx:for-item="item" wx:for-index="index">
+  <text class='character-item'>{{index+1}}. {{item}}</text>
+  </block>
+  </view>
+  <view class='charcter-tips' catchtap='goLetterBox'>
+  <text>直接去写信>></text>
+  </view>
+</view>

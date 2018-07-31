@@ -1,7 +1,9 @@
-<view class='container'>
-  <text>完成这个测试</text>
-  <text>让牛奶箱</text>
-  <text>听听你内心的声音</text>
+<view class='test-container'>
+  <view class='slogan'>
+    <text>完成这个测试</text>
+    <text>让牛奶箱</text>
+    <text>听听你内心的声音</text>
+  </view>
   <view class='panel1'>
     <text bindtap='onTestDetail' data-testid="0">E-I 你如何获取心理能量</text>
   </view>
@@ -14,11 +16,15 @@
   <view class='panel4'>
     <text bindtap='onTestDetail' data-testid="3">J-P 你如何做事</text>
   </view>
+  <view class='showResult' catchtap='goResult' wx:if="{{showToLetter}}">
+    <text>查看结果</text>
+    <image class='iconNext' src='/image/icon/more.png'></image>
+  </view>
   <view class='goNext'catchtap='goPost'wx:if='{{showToLetter}}'>
     <text>前往写信</text>
     <image class='iconNext' src='/image/icon/more.png'></image>
   </view>
   <view class='test-tip' wx:else>
-    <text>完成所有测试才可以投信哦～</text>
+      <text>本测试为MBTI精简版，从四个角度分析人的个性，帮你认识和了解自己，已被广泛用于人格测评。该测试大约需要3-4分钟，请耐心完成所有题目哦～</text>
   </view>
 </view>

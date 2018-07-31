@@ -38,7 +38,7 @@ Page({
     })
   },
   nextPage:function(){
-    if (app.globalData.userFlag){
+    if (!app.globalData.userFlag){
       wx.redirectTo({
         url: '../welcome/freshman/freshman',
       })
