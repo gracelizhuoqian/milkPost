@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
 
   /**
@@ -61,5 +62,16 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+  goNext:function(){
+    if (app.globalData.userFlag == 0) {
+      wx.redirectTo({
+        url: '/pages/test/test',
+      })
+    } else {
+      wx.redirectTo({
+        url: "../../../pages/letterbox/letterbox",
+      })
+    }
   }
 })

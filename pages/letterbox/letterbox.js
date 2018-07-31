@@ -35,6 +35,7 @@ Page({
                   item.readFlag = value;
                 }
               });
+              res.letterList.reverse();
               that.setData({ letterList: res.letterList });
             } else {
               wx.showToast({

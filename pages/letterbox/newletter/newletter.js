@@ -23,7 +23,6 @@ Page({
   },
  formSubmit: function(e) {
   var title = e.detail.value.title,
-      subject = e.detail.value.subject,
       content = e.detail.value.content,
       that = this,
       date = util.formatTime(new Date());
@@ -32,7 +31,6 @@ Page({
           method: 'POST',
           data: {
             title,
-            subject,
             content,
             date
           },
@@ -64,7 +62,7 @@ Page({
             })
           }
       };
-      if(title && subject && content){
+      if(title && content){
           if (content.length < 15) {
             wx.showModal({
               title: '提示',

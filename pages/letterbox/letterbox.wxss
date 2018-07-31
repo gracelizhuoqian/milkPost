@@ -23,15 +23,28 @@ page{
 .new-btn{
   position: absolute;
   right: 60rpx;
-  border: 1px solid #666;
-  box-shadow: 0 0 3px #666;
-  color: #555;
-  border-radius: 50%;
-  width: 53rpx;
-  height: 53rpx;
-  line-height: 48rpx;
-  font-size: 48rpx;
+  bottom: 50rpx;
   vertical-align: baseline;
+  display: flex;
+  flex-direction: row;
+  
+}
+.add-icon{
+  color: #555;
+  box-shadow: 0 0 3px #666;
+  border: 1px solid #666;
+  border-radius: 50%;
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 44rpx;
+  font-size: 44rpx;
+  margin-right: 10rpx;
+}
+.add-text{
+  color: #666;
+  font-size: 32rpx;
+  height: 48rpx;
+  line-height: 48rpx;
 }
 .letter-list{
   width: 80%;

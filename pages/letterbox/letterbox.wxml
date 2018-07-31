@@ -1,7 +1,10 @@
 <!--pages/mail/mail.wxml-->
 <view class="banner">
     <text>我的信箱</text>
-    <text class='new-btn' catchtap="onNewTap">+</text>
+    <view class='new-btn' catchtap="onNewTap">
+     <view class="add-icon">+</view>
+     <text class='add-text'>NEW</text>
+     </view>  
 </view>
 <view class='wrapper'>
  <scroll-view class='scroll-content' wx:if="{{letterList.length>0}}">

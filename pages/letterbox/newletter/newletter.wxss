@@ -29,7 +29,7 @@ page{
   padding-bottom: 10rpx;
   border-bottom:1px dashed #ffc; 
 }
-.subject{
+/* .subject{
   margin-top: 25rpx;
 	font-size: 30rpx;
 	text-align: left;
@@ -40,7 +40,7 @@ page{
 .subject text{
   height: 1.4rem;
   line-height: 1.4rem;
-}
+} */
 .subject input{
   line-height: 1.4rem;
 }
@@ -48,7 +48,7 @@ page{
 	font-size: 28rpx;
 	margin-top: 25rpx;
 	text-indent: 2em;
-  height: 65%;
+  height: 75%;
   padding-top:5rpx;
 }
 .content textarea{

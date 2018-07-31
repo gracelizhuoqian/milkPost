@@ -38,15 +38,16 @@ Page({
     })
   },
   nextPage:function(){
-    if(app.globalData.userFlag == 0){
+    if (app.globalData.userFlag){
       wx.redirectTo({
-        url: '/pages/test/test',
+        url: '../welcome/freshman/freshman',
       })
     }else{
       wx.redirectTo({
-        url:"../../pages/letterbox/letterbox",
+        url: '../letterbox/letterbox',
       })
     }
+
   },
   getUserInfoFun: function () {
     var that = this;

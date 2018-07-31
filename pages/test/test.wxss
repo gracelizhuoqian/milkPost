@@ -35,10 +35,11 @@ text{
   align-items: center;
   flex-direction: row;
   margin-top: 100rpx;
+  animation: tada 2s .5s ease both;
 }
 .goNext image{
   height: 60rpx;
-  width: 60rpx;
+  width: 60rpx; 
 }
 .goNext text{
   line-height: 32rpx;
@@ -51,3 +52,9 @@ text{
   font-size: 32rpx;
   font-weight: 300;
 }
+@-webkit-keyframes tada{
+  0%{-webkit-transform:scale(1);}
+  10%,20%{-webkit-transform:scale(0.9) rotate(-3deg);}
+  30%,50%,70%,90%{-webkit-transform:scale(1.2) rotate(3deg);}
+  40%,60%,80%{-webkit-transform:scale(1.2) rotate(-3deg);}
+  100%{-webkit-transform:scale(1) rotate(0);}}

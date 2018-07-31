@@ -30,17 +30,15 @@
   border-radius: 50%;
   margin-bottom: 50rpx;
 }
+
 .user-name{
   font-size: 32rpx;
-  color: #444;
-  display: block;
+
 }
 
 .moto{
   font-size: 28rpx;
-  line-height: 48rpx;
-  display: block;
-  text-align: center;
+  line-height: 80rpx;
 }
 page{
   background-color: #b3d4db;
@@ -59,11 +57,7 @@ page{
 .user-container text{
   color: #333;
 }
-.userNickName{
-  font-size:28rpx;
-  color:#666;
-  margin-bottom: 10rpx;
-}
+
 .user-class{
   margin-top: 30rpx;
   font-size: 28rpx;
@@ -74,4 +68,4 @@ page{
 button::after{
     border: none;
 }
-
+/* pages/welcome/welcome.wxss */

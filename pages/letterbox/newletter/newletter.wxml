@@ -5,10 +5,10 @@
 	      <view class="title">
 	        <input name="title" placeholder="标题（必填）" auto-focus/>
 	      </view>
-	      <view class="subject">
+	      <!-- <view class="subject">
           <text>Subject： </text>
 	        <input name="subject" maxlength="10" placeholder="信的主题，不超过10个字哦" />
-	      </view>
+	      </view> -->
 	      <view class="content">
 	         <textarea name="content" placeholder="请详细描述您的困扰哦，最少15个字"/>
 	      </view>

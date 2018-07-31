@@ -1,10 +1,11 @@
 {
   "pages":[
-    "pages/login/login",
     "pages/test/test",
+    "pages/login/login",
+    "pages/welcome/freshman/freshman",
+    "pages/welcome/freshman1/freshman1",
     "pages/test/question/question",
     "pages/letterbox/letterbox",
-    "pages/welcome/freshman/freshman",
     "pages/letterbox/letterdetail/letterdetail",
     "pages/letterbox/newletter/newletter"
   ],

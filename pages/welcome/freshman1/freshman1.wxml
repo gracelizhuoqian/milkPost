@@ -1,7 +1,12 @@
-<view>
-  <image src='/image/bg2.jpg' class='backImg'></image>
+<view bindtap='goNext'>
+  <image src='/image/imgsource/p3.jpeg' class='backImg'></image>
   <view class='panel'>
-    <text>虽不能立刻收到回信</text>
-    <text>但等待的希望总让人心生温暖</text>
+    <text>如果你初次过来</text>
+    <text>请先做个小测试</text>
+    <text>让我们认识你</text>
+    <text>也让你更好得认识自己</text>
+    <text>如果你是我们的老朋友</text>
+    <text>那就畅所欲言吧</text>
+    <text class='icon-next'>>></text>
   </view>
 </view>
