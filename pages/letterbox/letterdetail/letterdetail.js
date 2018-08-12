@@ -30,6 +30,12 @@ Page({
           data: {index},
           success: function (res) {
             if (res.code == 200) {
+              res.letterData.forEach(function(item){
+                item.createAt = item.createAt.split('.')[0];
+                let arr = item.createAt.split('');
+                arr.splice(10, 1, " ");
+                item.createAt = arr.join("")
+              })              
               if (res.letterData.length === 1 ){
                 that.setData({ letterDetail: res.letterData[0] });
               } else if (res.letterData[1].from === 'system'){

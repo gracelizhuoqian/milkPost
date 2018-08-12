@@ -23,32 +23,21 @@ page{
   box-shadow: 0px 0px 2px #aaa;
   background-color: #d4b483;
 }
+.reciever{
+  font-size: 32rpx;
+  padding-top: 30rpx;
+}
 .title{
 	margin-top: 25rpx;
 	text-align: center;
   padding-bottom: 10rpx;
   border-bottom:1px dashed #ffc; 
 }
-/* .subject{
-  margin-top: 25rpx;
-	font-size: 30rpx;
-	text-align: left;
-  display: flex;
-  line-height: 40rpx;
-  flex-direction: row;
-}
-.subject text{
-  height: 1.4rem;
-  line-height: 1.4rem;
-} */
-.subject input{
-  line-height: 1.4rem;
-}
+
 .content{
 	font-size: 28rpx;
 	margin-top: 25rpx;
-	text-indent: 2em;
-  height: 75%;
+  height: 65%;
   padding-top:5rpx;
 }
 .content textarea{

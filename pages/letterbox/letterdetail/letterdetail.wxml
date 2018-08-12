@@ -6,8 +6,6 @@
     <view class="letter-detail">
         <view class='letter-title'>{{letterDetail.title}}
         </view>
-        <view class='letter-subjec'>主题：{{letterDetail.subject}}
-        </view>
         <view class='letter-content'>{{letterDetail.content}}
         </view>
         <view class='letter-date'>写于{{letterDetail.createAt}}

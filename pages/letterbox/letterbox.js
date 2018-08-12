@@ -30,6 +30,9 @@ Page({
               res.letterList.forEach(function(item){
                 var letterid = item.letterid;
                 item.createAt = item.createAt.split('.')[0];
+                let arr = item.createAt.split('');
+                arr.splice(10,1," ");
+                item.createAt = arr.join("")
                 var value = wx.getStorageSync(letterid)
                 if (value) {
                   item.readFlag = value;
@@ -79,35 +82,35 @@ Page({
     }
     
   },
-  touchM: function (e) {
+  // touchM: function (e) {
    
-    if (e.touches.length == 1) {
+  //   if (e.touches.length == 1) {
    
-      var moveX = e.touches[0].clientX;
-      var disX = this.data.startX - moveX;
-      var delBtnWidth = this.data.delBtnWidth;
-      var txtStyle = "";
-      if (disX == 0 || disX < 0) {
-        txtStyle = "right:0rpx";
-      } else if (disX > 0) {
-        txtStyle = "right:" + disX + "rpx";
-        if (disX >= delBtnWidth) {
+  //     var moveX = e.touches[0].clientX;
+  //     var disX = this.data.startX - moveX;
+  //     var delBtnWidth = this.data.delBtnWidth;
+  //     var txtStyle = "";
+  //     if (disX == 0 || disX < 0) {
+  //       txtStyle = "right:0rpx";
+  //     } else if (disX > 0) {
+  //       txtStyle = "right:" + disX + "rpx";
+  //       if (disX >= delBtnWidth) {
         
-          txtStyle = "right:" + delBtnWidth + "rpx";
-        }
-      }
+  //         txtStyle = "right:" + delBtnWidth + "rpx";
+  //       }
+  //     }
     
-      var index = e.target.dataset.idx;
-      var list = this.data.letterList;
-      if (index >= 0) {
-        list[index].txtStyle = txtStyle;
+  //     var index = e.target.dataset.idx;
+  //     var list = this.data.letterList;
+  //     if (index >= 0) {
+  //       list[index].txtStyle = txtStyle;
   
-        this.setData({
-          letterList: list
-        });
-      }
-    }
-  },
+  //       this.setData({
+  //         letterList: list
+  //       });
+  //     }
+  //   }
+  // },
 
   touchE: function (e) {
     if (e.changedTouches.length == 1) {

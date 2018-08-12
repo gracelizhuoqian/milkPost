@@ -37,11 +37,14 @@ Page({
           success: function (res) {
             if(res.code == 200){
               wx.showToast({
-                title: '提交成功',
-                icon: 'success',
-                duration: 2000,
+                title: '我们会尽快回复的！',
+                icon: 'none',
+                duration: 1000,
                 complete: function (){
-                  that.goBack();
+                  setTimeout(function(){
+                    that.goBack();
+                  },1000)
+                  
                 }
               });
             }else{

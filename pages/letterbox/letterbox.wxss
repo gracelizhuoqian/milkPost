@@ -22,30 +22,17 @@ page{
 }
 .new-btn{
   position: absolute;
-  right: 60rpx;
-  bottom: 50rpx;
-  vertical-align: baseline;
-  display: flex;
-  flex-direction: row;
-  
-}
-.add-icon{
-  color: #555;
+  right: 70rpx;
+  color: #000;
   box-shadow: 0 0 3px #666;
-  border: 1px solid #666;
+  border: 1px solid #000;
   border-radius: 50%;
-  width: 48rpx;
-  height: 48rpx;
+  width: 53rpx;
+  height: 53rpx;
   line-height: 44rpx;
   font-size: 44rpx;
-  margin-right: 10rpx;
 }
-.add-text{
-  color: #666;
-  font-size: 32rpx;
-  height: 48rpx;
-  line-height: 48rpx;
-}
+
 .letter-list{
   width: 80%;
   position: relative;
@@ -75,9 +62,13 @@ page{
     top: 0; 
     height: 160rpx;   
 }
-.subject{
+.content{
   margin-top: 10rpx;
   font-size: 1em;
+  overflow: hidden;
+  word-space: nowrape;
+  text-overflow: ellipsis; 
+
 }
 .date{
   margin-bottom: 3rpx;
@@ -113,13 +104,9 @@ page{
   left: 50rpx;
   right: 50rpx;
   margin: 0 auto;
-
+  opacity: 0.2;
 }
-.blank text{
-  display: block;
-  text-align: left;
-  font-size: 30rpx;
-  line-height: 1.8;
-  color: #ccc;
-  text-indent: 2em;
+.blank .blank-img{
+  width: 640rpx;
+  height: 640rpx;
 }
